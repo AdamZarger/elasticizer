@@ -88,6 +88,14 @@ class Format(luigi.Task):
         # force formats -- just dates so far
         if 'date' in field and value:
             return value.isoformat()
+        elif 'array' in field and value:
+            # temp = ''
+            # for i in value:
+            #     temp = temp + i + ' * '
+            # print('Array! Split: {}'.format(temp))
+            # print('Length: {}'.format(len(value)))
+            
+            return list(value)
         else:
             return value
 
