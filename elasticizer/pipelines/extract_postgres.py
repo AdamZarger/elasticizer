@@ -90,9 +90,9 @@ class Format(luigi.Task):
             return value.isoformat()
         elif 'array' in field and value:
             if len(value) > 3:
-            temp = ''
-            for i in value:
-                temp = temp + i + ' * '
+                temp = ''
+                for i in value:
+                    temp = temp + i + ' * '
                 print('Array! Split: {}'.format(temp))
                 print('Length: {}'.format(len(value)))
             
