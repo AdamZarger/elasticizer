@@ -89,7 +89,7 @@ class Format(luigi.Task):
         if 'date' in field and value:
             return value.isoformat()
         elif 'array' in field and value:
-            if len(value) > 3:
+            if len(value) > 1:
                 temp = ''
                 for i in value:
                     temp = temp + i + ' * '
