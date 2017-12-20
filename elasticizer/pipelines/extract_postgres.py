@@ -89,11 +89,12 @@ class Format(luigi.Task):
         if 'date' in field and value:
             return value.isoformat()
         elif 'array' in field and value:
+            if len(value) > 3:
             # temp = ''
             # for i in value:
             #     temp = temp + i + ' * '
-            # print('Array! Split: {}'.format(temp))
-            # print('Length: {}'.format(len(value)))
+                print('Array! Split: {}'.format(temp))
+                print('Length: {}'.format(len(value)))
             
             return list(value)
         else:
