@@ -144,7 +144,7 @@ class Format(luigi.Task):
             # Build the labeled ES records into a json dump
             data = [self._projection(fields, row) for row in cur]
             with self.output().open('w') as f:
-                json.dump(data, f, ensure_ascii=False, encoding='utf8', default=decimal_default)
+                json.dump(data, f, encoding='utf8', default=decimal_default)
 
 
 class ValidMapping(luigi.ExternalTask):
